@@ -5,7 +5,6 @@
     <div class="index__btn" @click="createToggle()">ルームを作成する</div>
     <!-- <CreateMatchingBtn @getCreateFlag="createFlag = $event" /> -->
     <RecruitBnr :data="recruitBnrData[num]" />
-    <!-- <RecruitBnr :data="num == 2 ? Mode.rank : recruitBnrData[num]" /> -->
     <Spacer size="120px" />
     <div
       :class="[
