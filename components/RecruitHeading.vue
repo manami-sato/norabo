@@ -1,11 +1,11 @@
 <template>
-  <div :style="{ height: size }"></div>
+  <h3 class="recruit__heading">{{ heading }}</h3>
 </template>
 
 <script lang="ts">
 export default {
-  name: "Spacer",
-  props: ["size"],
+  name: "RecruitHeading",
+  props: ["heading"],
 };
 </script>
 

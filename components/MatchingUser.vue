@@ -1,17 +1,33 @@
 <template>
-  <div>
-    <div v-for="(item, i) in data" :key="i">
-      <RecruitHeading :heading="item.heading" />
-      <RecruitContents :contentsNumber="item.hit" />
+  <div class="matching__user">
+    <div>
+      <div class="matching__user--icon">
+        <!-- <img :src="data.img" :alt="data.name" /> -->
+      </div>
+      <div class="matching__user--name">{{ data.name }}</div>
     </div>
+    <div>
+      <div>
+        <!-- <span>フレンドコード</span> -->
+        <span>{{ data.cord.friend }}</span>
+      </div>
+      <div>
+        <!-- <span>Discord ID</span> -->
+        <span>{{ data.cord.voice }}</span>
+      </div>
+    </div>
+    <ul class="matching__user--tag">
+      <li>{{ data.rank }}</li>
+      <li v-for="(item, i) in data.tag" :key="i">
+        {{ item }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script lang="ts">
-import RecruitHeading from "./RecruitHeading.vue";
-import RecruitContents from "./RecruitContents.vue";
 export default {
-  name: "RecruitBnr",
+  name: "MatchingUser",
   props: ["data"],
 };
 </script>

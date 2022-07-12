@@ -14,14 +14,13 @@ export default {
     createToggle() {
       this.createFlag = !this.createFlag;
       this.$emit("getCreateFlag", this.createFlag);
-      console.log(this.createFlag);
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import "../assets/scss/common";
+@import "@/assets/scss/common";
 .createRoom {
   width: fit-content;
   background: $primary600;

@@ -1,8 +1,25 @@
-$primary400: #58A2A8;
+$primary100: #c4dee0;
+$primary300: #75b3b8;
+$primary400: #58a2a8;
 $primary500: #3a9299;
 $primary600: #348a91;
 $primary900: #18636b;
+$black: #424242;
 $gray: #9b9b9b;
 $pailgray: #eee;
 $bgGray: rgb(249, 249, 249);
 $white: #fff;
+@mixin btn {
+    width: fit-content;
+    // height: 48px;
+    background: $primary600;
+    color: $white;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 9999px;
+    letter-spacing: 0.1rem;
+    box-shadow: 0 2px 8px rgba($color: #000000, $alpha: 0.3);
+    // inset: auto 0 32px 0;
+    z-index: 1;
+}

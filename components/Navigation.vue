@@ -13,7 +13,7 @@
         {{ tab }}
       </li>
     </ul>
-    <div class="nav__filter">絞り込み</div>
+    <div class="nav__filter" @click="backToggle()">絞り込み</div>
   </nav>
 </template>
 
@@ -24,6 +24,7 @@ export default {
     return {
       tabs: ["おすすめ", "カジュアル", "ランク"],
       tabActive: 0,
+      backFlag: false,
     };
   },
   methods: {
@@ -31,12 +32,18 @@ export default {
       this.tabActive = i;
       this.$emit("getTabActive", i);
     },
+    backToggle() {
+      this.backFlag = !this.backFlag;
+      console.log(this.backFlag);
+
+      this.$emit("getFilteringActive", this.backFlag);
+    },
   },
 };
 </script>
 
 <style lang="scss">
-@import "../assets/scss/common";
+@import "@/assets/scss/common";
 .nav {
   display: flex;
   justify-content: space-between;

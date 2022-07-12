@@ -1,6 +1,11 @@
 <template>
   <header class="head">
-    <h1 class="head__logo"><NuxtLink to="/">norabo</NuxtLink></h1>
+    <h1 class="head__logo">
+      <NuxtLink to="/">
+        norabo
+        <!-- <Logo /> -->
+      </NuxtLink>
+    </h1>
     <ul class="head__account">
       <li v-for="(link, i) in links" :key="i">
         <NuxtLink :to="link.url" class="head__account--link">{{
@@ -12,7 +17,11 @@
 </template>
 
 <script lang="ts">
+// import Logo from "@/assets/img/logo.svg";
 export default {
+  // components: {
+  //   Logo,
+  // },
   name: "Head",
   data() {
     return {
@@ -32,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/scss/common";
+@import "@/assets/scss/common";
 .head {
   display: flex;
   justify-content: space-between;
