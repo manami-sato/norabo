@@ -19,21 +19,19 @@
 <script lang="ts">
 import Head from "@/components/Head.vue";
 import MatchingComponent from "@/components/MatchingComponent.vue";
-import MatchingModal from "@/components/MatchingModal.vue";
 
 export default {
   components: {
     Head,
     MatchingComponent,
-    MatchingModal,
   },
   name: "Matching",
   data() {
     return {
       pageData: {
-        name: "マッチング中",
-        description: "",
-        readerNumber: 3,
+        name: "マッチング完了！",
+        description: "リーダーの方はフレンド申請を行なってください！",
+        readerNumber: 0,
         userData: [
           {
             icon: "",
@@ -47,21 +45,22 @@ export default {
             tag: ["aaa", "bbb"],
           },
         ],
-        backText: "このマッチングから退出",
-        endText: "",
+        backText: "",
+        endText: "マッチングを終了",
       },
       modal: [
         {
-          text: "本当にこのマッチングから退出しますか？",
+          text: `ゲーム内及びDiscordにて
+マッチングメンバーとフレンドになりましたか？`,
           attention: false,
         },
         {
-          text: "退出しない",
+          text: "まだ",
           attention: false,
         },
         {
-          text: "退出する",
-          attention: true,
+          text: "なった！",
+          attention: false,
         },
       ],
       modalFlag: false,
@@ -72,4 +71,17 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/common";
+.matching {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  &__cancel {
+    @include btn;
+    margin: auto auto 32px;
+    // color: $primary400;
+    // margin: auto auto 24px;
+    // font-size: 1.2rem;
+    // text-decoration: underline;
+  }
+}
 </style>

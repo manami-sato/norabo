@@ -1,5 +1,5 @@
 <template>
-  <div class="filtering" :style="{ height: windowHeight + 'px' }">
+  <div class="filtering" :style="{ height: $height() + 'px' }">
     <div class="filtering__heading">
       <div class="filtering__heading--back" @click="backToggle()"></div>
       <div class="filtering__heading--text">ルームの絞り込み</div>
@@ -17,15 +17,15 @@ export default {
     Matching,
   },
   name: "Filtering",
+  props: ["getFlag"],
   data() {
     return {
       backFlag: true,
       clearFlag: false,
-      windowHeight: 0,
     };
   },
   mounted() {
-    this.windowHeight = window.innerHeight;
+    this.backFlag = this.getFlag;
   },
   methods: {
     backToggle() {

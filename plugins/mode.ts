@@ -65,9 +65,4 @@ export default {
       },
     ],
   }),
-  methods: {
-    myMethod() {
-      console.log("my method");
-    },
-  },
 };

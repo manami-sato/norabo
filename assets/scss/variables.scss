@@ -11,7 +11,7 @@ $bgGray: rgb(249, 249, 249);
 $white: #fff;
 @mixin btn {
     width: fit-content;
-    // height: 48px;
+    height: 48px;
     background: $primary600;
     color: $white;
     padding: 12px 24px;

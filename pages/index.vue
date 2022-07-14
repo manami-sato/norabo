@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <main class="index">
     <Head />
     <Navigation
       @getTabActive="num = $event"
@@ -15,17 +15,21 @@
       ]"
     >
       <div class="index__createMatching--swipe" @click="createToggle()" />
-      <Matching />
+      <Filtering />
       <div class="index__createMatching--btn" @click="createToggle()">
         ルームを作成する
       </div>
       <Spacer size="8px" />
     </div>
-    <Filtering @getBackActive="filteringFlag = $event" v-if="filteringFlag" />
+    <IndexFiltering
+      :getFlag="filteringFlag"
+      @getBackActive="filteringFlag = $event"
+      v-if="filteringFlag"
+    />
     <transition name="fade">
       <div class="index__bg" v-if="createFlag"></div>
     </transition>
-  </div>
+  </main>
 </template>
 
 <script lang="ts">
@@ -33,9 +37,8 @@ import Vue from "vue";
 import Navigation from "@/components/Navigation.vue";
 import RecruitBnr from "@/components/RecruitBnr.vue";
 import Spacer from "@/components/Spacer.vue";
-import Mode from "../mixins/mode";
-import Filtering from "@/components/IndexFiltering.vue";
-import Matching from "@/components/Filtering.vue";
+import IndexFiltering from "@/components/IndexFiltering.vue";
+import Filtering from "@/components/Filtering.vue";
 
 export default Vue.extend({
   components: {
@@ -43,7 +46,7 @@ export default Vue.extend({
     RecruitBnr,
     Spacer,
     Filtering,
-    Matching,
+    IndexFiltering,
   },
   name: "Index",
   data() {

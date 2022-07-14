@@ -34,8 +34,6 @@ export default {
     },
     backToggle() {
       this.backFlag = !this.backFlag;
-      console.log(this.backFlag);
-
       this.$emit("getFilteringActive", this.backFlag);
     },
   },
