@@ -1,12 +1,14 @@
 {
     "version": 2,
     "builds": [{
-        "src": "nuxt.config.ts",
-        "use": "@nuxtjs/vercel-builder",
-        "config": {
-            "serverFiles": ["package.json"]
+            "src": "nuxt.config.js",
+            "use": "@nuxtjs/vercel-builder",
+            "config": {
+                "serverFiles": ["package.json"]
+            }
         }
-    }],
+
+    ],
     "routes": [{
         "src": "/sw.js",
         "continue": true,
