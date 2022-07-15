@@ -91,6 +91,7 @@ export default {
     };
   },
   mounted() {
+    // @ts-ignore
     this.height = window.innerHeight;
   },
 };

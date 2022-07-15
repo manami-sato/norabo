@@ -25,14 +25,18 @@ export default {
     };
   },
   mounted() {
+    // @ts-ignore
     this.backFlag = this.getFlag;
   },
   methods: {
     backToggle() {
+      // @ts-ignore
       this.backFlag = !this.backFlag;
+      // @ts-ignore
       this.$emit("getBackActive", this.backFlag);
     },
     clearToggle() {
+      // @ts-ignore
       this.clearFlag = !this.clearFlag;
     },
   },

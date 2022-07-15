@@ -11,11 +11,9 @@
       </div>
     </div>
     <Spacer size="4px" v-if="data.description !== ''" />
-    <span
-      class="matching__description"
-      v-if="data.description !== ''"
-      >{{ data.description }}</span
-    >
+    <span class="matching__description" v-if="data.description !== ''">{{
+      data.description
+    }}</span>
     <Spacer size="16px" />
     <div v-for="(item, i) in data.userData" :key="i">
       <MatchingUser :data="item" />
@@ -49,15 +47,21 @@ export default {
   },
 
   mounted() {
+    // @ts-ignore
     this.modalFlag = this.getFlag;
+    // @ts-ignore
     this.height = window.innerHeight - 96 - 24;
   },
   methods: {
     modalToggle() {
+      // @ts-ignore
       if (this.modalFlag) {
+        // @ts-ignore
         this.modalFlag = !this.modalFlag;
       }
+      // @ts-ignore
       this.modalFlag = !this.modalFlag;
+      // @ts-ignore
       this.$emit("getModalFlag", this.modalFlag);
     },
   },

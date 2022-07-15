@@ -29,11 +29,15 @@ export default {
   },
   methods: {
     tabClick(i: number) {
+      // @ts-ignore
       this.tabActive = i;
+      // @ts-ignore
       this.$emit("getTabActive", i);
     },
     backToggle() {
+      // @ts-ignore
       this.backFlag = !this.backFlag;
+      // @ts-ignore
       this.$emit("getFilteringActive", this.backFlag);
     },
   },

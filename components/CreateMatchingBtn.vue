@@ -12,7 +12,9 @@ export default {
   },
   methods: {
     createToggle() {
+      // @ts-ignore
       this.createFlag = !this.createFlag;
+      // @ts-ignore
       this.$emit("getCreateFlag", this.createFlag);
     },
   },
