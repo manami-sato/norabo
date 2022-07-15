@@ -34,6 +34,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Head from "@/components/Head.vue";
 import Navigation from "@/components/Navigation.vue";
 import RecruitBnr from "@/components/RecruitBnr.vue";
 import Spacer from "@/components/Spacer.vue";
@@ -42,6 +43,7 @@ import Filtering from "@/components/Filtering.vue";
 
 export default Vue.extend({
   components: {
+    Head,
     Navigation,
     RecruitBnr,
     Spacer,

@@ -31,7 +31,7 @@ export default {
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: ["nuxt-svg-loader"],
+    modules: ["nuxt-svg-loader", "@nuxtjs/axios"],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
