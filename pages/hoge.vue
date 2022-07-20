@@ -5,32 +5,16 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+  name: "hoge",
   data() {
     return {
       res: [],
     };
   },
-  // async asyncData({ $axios }) {
-  //   const params = JSON.stringify({
-  //     email: "email@aaa.jp",
-  //     nick_name: "nickname",
-  //     age: "1",
-  //     pw: "pw",
-  //     gender: "1",
-  //   });
-  //   const response = await $axios.$post(
-  //     "https://click.ecc.ac.jp/ecc/msatou/comp_php/sign_up.php",
-  //     {
-  //       mode: "cors",
-  //       params,
-  //     }
-  //   );
-  //   return {
-  //     res: response,
-  //   };
-  // },
   // async asyncData({ $axios }) {
   //   const params = {
   //     user_id: "10",
@@ -53,7 +37,7 @@ export default {
         gender: "1",
       });
       const response = await this.$axios.$post(
-        "https://click.ecc.ac.jp/ecc/msatou/comp_php/sign_up.php",
+        "https://click.ecc.ac.jp/ecc/msatou/comp_php/sign_up.php/",
         {
           mode: "cors",
           params,
@@ -64,5 +48,5 @@ export default {
       };
     },
   },
-};
+});
 </script>
