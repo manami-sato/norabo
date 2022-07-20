@@ -13,7 +13,7 @@
             :name="item.name"
             :value="content.value"
             :id="content.value"
-            v-model="checkedData[i]"
+            @click="checked(i, $event)"
           />
           <div :for="content.value">
             {{ content.text }}
@@ -34,18 +34,39 @@ export default {
     return {
       formData: [
         {
+          heading: "プラットフォーム",
+          name: "platform",
+          contents: [
+            {
+              value: "pc",
+              text: "PC",
+            },
+            {
+              value: "ps",
+              text: "PlayStation",
+            },
+            {
+              value: "xbox",
+              text: "XBox",
+            },
+            {
+              value: "Switch",
+              text: "switch",
+            },
+          ],
+          type: "radio",
+        },
+        {
           heading: "プレイスタイル",
           name: "playstyle",
           contents: [
             {
               value: "casual",
               text: "カジュアル",
-              checked: true,
             },
             {
               value: "rank",
               text: "ランク",
-              checked: false,
             },
           ],
           type: "radio",
@@ -70,12 +91,10 @@ export default {
             {
               value: "1",
               text: "1",
-              checked: false,
             },
             {
               value: "2",
               text: "2",
-              checked: true,
             },
           ],
           type: "radio",
@@ -104,10 +123,59 @@ export default {
           type: "checkbox",
         },
       ],
-      checkedData: [[], [], [], []],
-      checkedFlag: [false, false, false, false],
+      checkedData: ["", "", "", "", []],
       formFlag: false,
+      tagData: "",
+      tagDataLength: 0,
     };
+  },
+  methods: {
+    checked(i: any, e: any) {
+      // @ts-ignore
+      this.tagData = e.target.value;
+      if (i === 4) {
+        // @ts-ignore
+        this.tagDataLength = this.checkedData[3].length;
+        // @ts-ignore
+        for (let i2 = 0; i2 < this.tagDataLength; i2++) {
+          // @ts-ignore
+          if (this.checkedData[i][i2] == this.tagData) {
+            // @ts-ignore
+            this.checkedData[i].splice(i2, 1);
+          }
+        }
+        // @ts-ignore
+        if (this.checkedData[i].length == this.tagDataLength) {
+          // @ts-ignore
+          this.checkedData[i].push(e.target.value);
+        }
+      } else {
+        // @ts-ignore
+        this.checkedData[i] = this.tagData;
+      }
+      if (
+        // @ts-ignore
+        this.checkedData[0] !== "" &&
+        // @ts-ignore
+        this.checkedData[1] !== "" &&
+        // @ts-ignore
+        this.checkedData[2] !== "" &&
+        // @ts-ignore
+        this.checkedData[3] !== "" &&
+        // @ts-ignore
+        this.checkedData[4].length !== 0
+      ) {
+        // @ts-ignore
+        this.formFlag = true;
+        // @ts-ignore
+        this.$emit("sendCheckedData", this.checkedData);
+      } else {
+        // @ts-ignore
+        this.formFlag = false;
+      }
+      // @ts-ignore
+      this.$emit("sendFormFlag", this.formFlag);
+    },
   },
 };
 </script>

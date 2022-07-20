@@ -38,6 +38,7 @@ import Head from "@/components/Head.vue";
 import Navigation from "@/components/Navigation.vue";
 import RecruitBnr from "@/components/RecruitBnr.vue";
 import Spacer from "@/components/Spacer.vue";
+// @ts-ignore
 import IndexFiltering from "@/components/IndexFiltering.vue";
 import Filtering from "@/components/Filtering.vue";
 
